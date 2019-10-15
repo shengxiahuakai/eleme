@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header :seller="seller"></Header>
+    <div>
+        <router-link to="/goods">商品</router-link>
+        <router-link to="/ratings">评价</router-link>
+        <router-link to="/seller">商家</router-link>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from './components/header/header.vue';
 export default {
   name: 'app',
+  data(){
+    return{
+        seller:{
+
+        }
+    }
+  },
   components: {
-    HelloWorld
+    Header
   }
 }
 </script>
